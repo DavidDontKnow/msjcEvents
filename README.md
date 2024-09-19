@@ -6,6 +6,12 @@ Then, the data is parsed using BeautifulSoup and Pandas to output the data to a 
 
 ### Installation
 
+To install the dependencies, run the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
 ### Usage
 
 To run the scraper, run the following command:
