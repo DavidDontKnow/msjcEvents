@@ -7,7 +7,7 @@ data = []
 with sync_playwright() as p:
     url = "https://calendar.msjc.edu/?view=list2&search=y"
     print("Opening browser...")
-    browser = p.chromium.launch(headless=False, slow_mo=100)
+    browser = p.chromium.launch()
     page = browser.new_page()
     print("Going to URL...")
     page.goto(url)
