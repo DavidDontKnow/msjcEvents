@@ -24,7 +24,18 @@ with sync_playwright() as p:
         item = {}
         item['Title'] = event.find('a').text
         item['Link'] = event.find('a').attrs['href']
-        item['DateTime'] = event.find('p').text.strip()
+        dateTime = event.find('p').text.strip()
+        ## remove all white spaces
+        dateTime = " ".join(dateTime.split())
+        item['DateTime'] = dateTime
+        item['Date'] = dateTime.split(" ")[0]
+        item['Time'] = dateTime.split(" ")[1:3]
+
+        try:
+            item['Image'] = event.find('img').attrs['src']
+        except:
+            item['Image'] = ""
+
         data.append(item)
         
     
